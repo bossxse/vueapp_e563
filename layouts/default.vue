@@ -47,7 +47,11 @@
         <v-toolbar-title>Page title</v-toolbar-title>
 
         <v-spacer />
-
+        <nuxt-link to="login">
+          <v-btn icon>
+            <v-icon>lock_open</v-icon>
+          </v-btn>
+        </nuxt-link>
         <nuxt-link to="menu">
           <v-btn icon>
             <v-icon>home</v-icon>

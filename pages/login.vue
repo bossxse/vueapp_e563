@@ -21,14 +21,14 @@
     </v-card-text>
     <v-card-actions>
       <nuxt-link to="register">
-        <v-btn color="warning">
+        <v-btn color="primary">
           <v-icon>loupe</v-icon>
           REGISTER
         </v-btn>
       </nuxt-link>
       <v-spacer />
       <nuxt-link to="menu">
-        <v-btn color="primary">
+        <v-btn color="success">
           <v-icon>forward</v-icon>
           LOGIN
         </v-btn>
