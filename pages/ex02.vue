@@ -4,19 +4,13 @@
       <v-icon size="120" color="rainbow">
         looks
       </v-icon>
-      <h1>SIGN IN</h1><h2>{{ fname }}</h2>
+      <h1>Web Site Name</h1>
+      <h2>{{ fname }}</h2>
     </center>
 
     <v-card-text>
       <v-form>
-        <v-text-field v-model="id" prepend-icon="mdi-account-circle" label="Username" />
-        <v-text-field
-          :type="showPassword ? 'text' : 'password'"
-          label="Password"
-          prepend-icon="mdi-lock"
-          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="showPassword = !showPassword"
-        />
+        <v-text-field v-model="id" prepend-icon="mdi-account-circle" label="รหัสสถานศึกษา" />
       </v-form>
     </v-card-text>
     <v-card-actions>
@@ -46,17 +40,16 @@ export default {
       pass: '',
       fname: '',
       name: '',
-
     }
   },
   methods: {
     async  doSave() {
       console.log('do Svae')
-      let res = await fetch('http://localhost:7001/list?student_id=' + this.id)
+      let res = await fetch('http://localhost:7001/listex02?id=' + this.id)
       let data = await res.json()
       console.log(data)
-      console.log(data.rows[0].name)
-      this.fname = data.rows[0].name;
+      console.log(data.rows.web_url)
+      this.fname = data.rows.web_url;
     },
   },
 }
